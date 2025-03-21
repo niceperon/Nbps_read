@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBPS Gaming Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Main Menu -->
+    <div class="main-menu" id="mainMenu">
+        <div class="menu-container">
+            <h1 class="main-title">NBPS Gaming Hub</h1>
+            <div class="menu-subtitle">by Tea Squad</div>
+            
+            <div class="game-selector">
+                <div class="game-card active" data-game="clicker">
+                    <div class="game-icon"><i class="fas fa-mouse-pointer"></i></div>
+                    <h3>Cursor Clicker</h3>
+                    <p>Click your way to victory!</p>
+                    <button class="play-btn">PLAY</button>
+                </div>
+                
+                <div class="game-card active" data-game="snake">
+                    <div class="game-icon"><i class="fas fa-dragon"></i></div>
+                    <h3>Snake Game</h3>
+                    <p>Classic snake with a twist!</p>
+                    <button class="play-btn">PLAY</button>
+                </div>
+                
+                <div class="game-card coming-soon">
+                    <div class="game-icon"><i class="fas fa-question"></i></div>
+                    <h3>Coming Soon</h3>
+                    <p>More games in development</p>
+                    <button class="play-btn" disabled>COMING SOON</button>
+                </div>
+            </div>
+            
+            <div class="menu-footer">
+                <button id="aboutMenuBtn" class="menu-btn"><i class="fas fa-info-circle"></i> About</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Game Container (Holds all games) -->
+    <div class="game-container" id="gameContainer" style="display: none;">
+        <!-- Back to Menu Button -->
+        <div class="back-to-menu">
+            <button id="backToMenuBtn"><i class="fas fa-arrow-left"></i> Back to Menu</button>
+        </div>
+        
+        <!-- Clicker Game -->
+        <div class="game" id="clickerGame">
+            <div class="container">
+                <h1>Cursor Clicker Game</h1>
+                <div class="score-container">
+                    <h2><i class="fas fa-trophy"></i> Score: <span id="score">0</span></h2>
+                    <h3><i class="fas fa-bolt"></i> Auto-Clicks: <span id="autoClicks">0</span> per second</h3>
+                </div>
+                <div class="game-area" id="gameArea">
+                    <div class="click-button" id="clickButton">
+                        <img src="clickimage.jpg" alt="Click Me" class="click-image">
+                    </div>
+                </div>
+                <div class="upgrades">
+                    <h2><i class="fas fa-level-up-alt"></i> Upgrades</h2>
+                    <div class="upgrade-buttons">
+                        <button id="upgradeClick" class="upgrade-btn"><i class="fas fa-hand-pointer"></i> Upgrade Click (Cost: 10)</button>
+                        <button id="upgradeAuto" class="upgrade-btn"><i class="fas fa-robot"></i> Auto Clicker (Cost: 50)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Snake Game -->
+        <div class="game" id="snakeGame" style="display: none;">
+            <div class="container">
+                <h1>Snake Game</h1>
+                <div class="score-container">
+                    <h2><i class="fas fa-trophy"></i> Score: <span id="snakeScore">0</span></h2>
+                    <h3><i class="fas fa-trophy"></i> High Score: <span id="snakeHighScore">0</span></h3>
+                </div>
+                <div class="game-controls">
+                    <button id="startSnakeBtn" class="control-btn"><i class="fas fa-play"></i> Start Game</button>
+                    <button id="pauseSnakeBtn" class="control-btn"><i class="fas fa-pause"></i> Pause</button>
+                </div>
+                <div class="snake-game-area">
+                    <canvas id="snakeCanvas" width="400" height="400" style="border:2px solid #550000; background-color: #111;"></canvas>
+                </div>
+                <div class="game-instructions">
+                    <p>Use <strong>Arrow Keys</strong> or <strong>WASD</strong> to control the snake.</p>
+                    <p>Collect the red food to grow and increase your score!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cursor-follower" id="cursorFollower"></div>
+    <script src="menu.js"></script>
+    <script src="script.js"></script>
+    <script src="snake_new.js"></script>
+</body>
+</html> 
